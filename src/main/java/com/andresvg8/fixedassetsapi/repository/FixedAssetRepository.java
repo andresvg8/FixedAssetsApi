@@ -15,4 +15,5 @@ public interface FixedAssetRepository extends JpaRepository<FixedAsset, Long> {
     Optional<List<FixedAsset>> findByPurchaseDate(LocalDate purchaseDate);
 
     Optional<List<FixedAsset>> findBySerial(String serial);
+
 }

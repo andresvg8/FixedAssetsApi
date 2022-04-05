@@ -38,4 +38,9 @@ public class FixedAssetServiceImpl implements FixedAssetService {
     public Optional<FixedAsset> findById(Long id) {
         return fixedAssetRepository.findById(id);
     }
+
+    @Override
+    public Optional<List<FixedAsset>> findAll() {
+        return Optional.of(fixedAssetRepository.findAll());
+    }
 }

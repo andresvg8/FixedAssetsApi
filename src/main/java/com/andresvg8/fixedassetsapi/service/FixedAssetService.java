@@ -16,4 +16,6 @@ public interface FixedAssetService {
     Optional<List<FixedAsset>> findBySerial(String serial);
 
     Optional<FixedAsset> findById(Long id);
+
+    Optional<List<FixedAsset>> findAll();
 }
