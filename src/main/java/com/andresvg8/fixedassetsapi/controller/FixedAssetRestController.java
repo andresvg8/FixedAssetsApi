@@ -120,8 +120,8 @@ public class FixedAssetRestController {
     }
 
     private boolean areFakeValuesSetted = false;
-    //@GetMapping("/setdefaults")
-    private ResponseEntity<?> setFakeValuesIfPossible(){
+    @GetMapping("/setdefaults")
+    public ResponseEntity<?> setFakeValuesIfPossible(){
         if( !(this.areFakeValuesSetted) ){
             try{
                 String[] cityNames = {"Bogotá", "Cali", "Villavicencio"};
