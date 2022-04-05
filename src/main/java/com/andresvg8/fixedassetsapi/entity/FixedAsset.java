@@ -20,7 +20,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @NamedQueries({
-		@NamedQuery(name = "FixedAsset.findByType", query = "SELECT a FROM FixedAsset a WHERE a.type LIKE :assetType"),
+		@NamedQuery(name = "FixedAsset.findByType", query = "SELECT a FROM FixedAsset a WHERE a.type LIKE :type"),
 		@NamedQuery(name = "FixedAsset.findByPurchaseDate", query = "SELECT a FROM FixedAsset a WHERE a.purchaseDate LIKE :purchaseDate"),
 		@NamedQuery(name = "FixedAsset.findBySerial", query = "SELECT a FROM FixedAsset a WHERE a.serial LIKE :serial")
 })
