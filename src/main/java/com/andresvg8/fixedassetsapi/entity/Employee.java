@@ -36,5 +36,5 @@ public class Employee implements Serializable {
 
 	@OneToMany
 	@JoinColumn(name = "employee_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
-	private List<FixedAsset> assets = new ArrayList<>();
+	@Getter @Setter private List<FixedAsset> assets = new ArrayList<>();
 }
