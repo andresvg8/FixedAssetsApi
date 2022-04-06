@@ -108,7 +108,7 @@ public class FixedAssetRestController {
 
     @GetMapping("/all")
     public ResponseEntity<?> findAllAssets(){
-        this.setFakeValuesIfPossible();
+        //this.setFakeValuesIfPossible();
         Optional<List<FixedAsset>> optionalAssets = fixedAssetService.findAll();
         if(!optionalAssets.isPresent()){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error. Can not recover data from the database.");
@@ -186,6 +186,8 @@ public class FixedAssetRestController {
                     asset.setLongitude(assetLongitudes[x]);
                     asset.setPurchasePrice(assetPurchasePrices[x]);
                     asset.setPurchaseDate(assetPurchaseDates[x]);
+                    Optional<Employee> oEmployee = employeeService.findById( (long)( Math.random()*20 ) );
+                    asset.setEmployee( oEmployee.isPresent() ? oEmployee.get() : null );
                     fixedAssetService.save(asset);
                 }
             }
