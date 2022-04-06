@@ -48,7 +48,8 @@ public class FixedAsset implements Serializable {
 	@Getter @Setter private LocalDate purchaseDate; 		//fecha de compra
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	//@JoinColumn(name = "employee_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
 	@Getter @Setter private Employee employee;
 
+	@ManyToOne(fetch = FetchType.EAGER)
+	@Getter @Setter private CompanyArea companyArea;
 }
