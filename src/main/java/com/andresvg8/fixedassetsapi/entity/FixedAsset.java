@@ -47,8 +47,8 @@ public class FixedAsset implements Serializable {
 	@Getter @Setter private Double purchasePrice;	//valor compra,
 	@Getter @Setter private LocalDate purchaseDate; 		//fecha de compra
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "employee_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+	@ManyToOne(fetch = FetchType.EAGER)
+	//@JoinColumn(name = "employee_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
 	@Getter @Setter private Employee employee;
 
 }
